@@ -1,18 +1,14 @@
 <ul class="horizontal-list">
-  {% for item in include.collection %}
+  {% for item in include.collection limit: 3 %}
 
-    <li class="card">
+    <li class="postcard">
       <a href="{{ item.url }}">
-        <span class="header">
+        <h3 class="header">
           {{ item.title }}
-
           {% if item.highlight %}
             <mark>{{ item.highlight }}</mark>
           {% endif %}
-
-        </span>
-
-        <hr />
+        </h3>
 
         {% if item.desc != false %}
         <p class="body">

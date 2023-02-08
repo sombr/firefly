@@ -1,9 +1,10 @@
-{% if site.posts.size > 0 %}
-  <ul>
-    {% for post in site.posts %}
+{% if site.posts.size > 3 %}
+  <ul class="ldash">
+    {% for post in site.posts offset:3 %}
       <li class="post-list-item">
+        &nbsp;
         <span class="home-date">
-          {{ post.date | date: site.theme_config.date_format }}»
+          {{ post.date | date: site.theme_config.date_format }} 
         </span>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </li>
